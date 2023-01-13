@@ -1,0 +1,53 @@
+package step_definitions;
+
+import io.cucumber.java.en.*;
+import io.restassured.RestAssured;
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
+
+public class Step1 {
+	private static Response response;
+	private static String BASE_URL = "https://lms-backend-service.herokuapp.com/lms";
+	//private static String programName ;
+	private static String programName ;
+	private static String programDescription ;
+	private static String programStatus ;
+	private static int programId;
+	
+		@Given("User sets the base API request <URL>")
+		public void user_sets_the_base_api_request_url() {
+			RestAssured.baseURI=BASE_URL;
+		}
+
+		@When("User sends the Api Request to get All Programs")
+		public void user_sends_the_api_request_to_get_all_programs() {
+		    RequestSpecification request=RestAssured.given();
+		    response=request.get("/allPrograms");
+		    String jsonString = response.asString();
+		}
+
+		@Then("User modifies body programname as<name> program description as<desc> and program status as<status>")
+		public void user_modifies_body_programname_as_name_program_description_as_desc_and_program_status_as_status() {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new io.cucumber.java.PendingException();
+		}
+
+		@When("User enter <id> in value")
+		public void user_enter_id_in_value() {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new io.cucumber.java.PendingException();
+		}
+
+		@Then("User Put request created")
+		public void user_put_request_created() {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new io.cucumber.java.PendingException();
+		}
+
+		@When("User Validates Status <code>")
+		public void user_validates_status_code() {
+		    // Write code here that turns the phrase above into concrete actions
+		    throw new io.cucumber.java.PendingException();
+		}
+
+}
